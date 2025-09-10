@@ -1,0 +1,17 @@
+id: flint
+edition: 2025
+commands: [flint]
+
+metadata:
+  name: Flint
+  description: The Universal Package Manager
+  license: MIT OR Apache-2.0
+  version: 0.1.0
+
+directory: target/x86_64-unknown-linux-musl/release/flint
+build_script: flint.sh
+
+sources:
+  - kind: git
+    url: https://github.com/TimelessOS/Flint
+    commit: 736de044c1e9c557e9ad20c4e799fbda898f707e
