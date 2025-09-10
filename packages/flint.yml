@@ -3,10 +3,11 @@ edition: 2025
 commands: [flint]
 
 metadata:
-  name: Flint
+  title: Flint
   description: The Universal Package Manager
   license: MIT OR Apache-2.0
   version: 0.1.0
+  homepage_url: https://github.com/TimelessOS/Flint
 
 directory: target/x86_64-unknown-linux-musl/release/flint
 build_script: flint.sh
