@@ -15,4 +15,4 @@ build_script: flint.sh
 sources:
   - kind: git
     url: https://github.com/TimelessOS/Flint
-    commit: 736de044c1e9c557e9ad20c4e799fbda898f707e
+    commit: 417ea0f95683b103a12251d73d8d7c373747426a
