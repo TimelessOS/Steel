@@ -1,0 +1,14 @@
+id: ncurses
+edition: 2025
+
+metadata:
+  license: X11
+  version: ncurses-6.5
+  homepage_url: https://invisible-island.net/ncurses/
+
+directory: out
+build_script: ncurses.sh
+
+sources:
+  - kind: tar
+    url: https://invisible-mirror.net/archives/ncurses/current/ncurses-6.5-20250809.tgz
