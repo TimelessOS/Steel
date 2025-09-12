@@ -9,8 +9,8 @@ metadata:
   version: 0.1.0
   homepage_url: https://github.com/TimelessOS/Flint
 
-directory: target/x86_64-unknown-linux-musl/release/flint
-build_script: flint.sh
+directory: out
+build_script: ../common-scripts/rust.sh
 
 sources:
   - kind: git
