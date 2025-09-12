@@ -1,0 +1,24 @@
+id: htop
+edition: 2025
+commands: [bin/htop]
+
+metadata:
+  title: htop
+  description: htop is a cross-platform interactive process viewer.
+  license: GPL-2.0
+  version: 3.4.1
+  homepage_url: https://htop.dev/
+
+directory: out
+build_script: htop.sh
+
+include: 
+- ../deps/ncurses.yml
+
+sdks: 
+- ../deps/linux-headers.yml
+
+sources:
+  - kind: git
+    url: https://github.com/htop-dev/htop
+    commit: 348c0a6bf4f33571835a0b6a1a0f5deb15132128
