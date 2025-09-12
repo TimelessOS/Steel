@@ -1,7 +1,10 @@
+#!/bin/bash
+set -e
+
 cd ncurses-6.5-20250809
 
 CC=musl-gcc ./configure \
-    --prefix=/usr/ \
+    --prefix=/ \
     --with-shared \
     --without-debug \
     --without-ada \

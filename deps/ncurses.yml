@@ -12,3 +12,6 @@ build_script: ncurses.sh
 sources:
   - kind: tar
     url: https://invisible-mirror.net/archives/ncurses/current/ncurses-6.5-20250809.tgz
+
+env:
+  TERMINFO: "./share/terminfo"
