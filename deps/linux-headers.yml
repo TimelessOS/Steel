@@ -1,0 +1,14 @@
+id: linux-headers
+edition: 2025
+
+metadata:
+  license: GPL-2.0-or-later
+  version: 6.1.152
+  homepage_url: https://kernel.org/
+
+directory: out
+build_script: linux-headers.sh
+
+sources:
+  - kind: tar
+    url: https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.152.tar.gz
