@@ -1,0 +1,16 @@
+id: iana-etc
+edition: 2025
+
+metadata:
+  title: IANA-etc
+  description: IANA Protocol Numbers and Service Name and Transport Protocol Port Number Registry
+  license: CC0-1.0
+  version: 20250807
+  homepage_url: https://www.iana.org/assignments/
+
+directory: out
+build_script: iana-etc.sh
+
+sources:
+  - kind: tar
+    url: https://github.com/Mic92/iana-etc/releases/download/20250807/iana-etc-20250807.tar.gz
