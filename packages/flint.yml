@@ -10,7 +10,7 @@ metadata:
   homepage_url: https://github.com/TimelessOS/Flint
 
 directory: out
-build_script: ../common-scripts/rust.sh
+build_script: ../common-scripts/rust.sh flint
 
 sources:
   - kind: git
