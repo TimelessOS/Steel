@@ -1,0 +1,26 @@
+id: btop
+edition: 2025
+commands: [bin/btop]
+
+metadata:
+  title: btop
+  description: Resource monitor that shows usage and stats for processor, memory, disks, network and processes.
+  license: Apache-2.0
+  version: 1.4.4
+  homepage_url: https://github.com/aristocratos/btop
+
+directory: out
+build_script: btop.sh
+
+include: 
+- ../deps/ncurses.yml
+
+sdks: 
+- ../deps/linux-headers.yml
+# lowdown appears to be needed for docs.
+# TODO: GPU Support
+
+sources:
+  - kind: git
+    url: https://github.com/aristocratos/btop
+    commit: 0f398abd64febfbc5f2115be3156682f47308f48
