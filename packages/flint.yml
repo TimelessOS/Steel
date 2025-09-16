@@ -6,7 +6,7 @@ metadata:
   title: Flint
   description: The Universal Package Manager
   license: MIT OR Apache-2.0
-  version: 0.1.0
+  version: 0.1.1
   homepage_url: https://github.com/TimelessOS/Flint
 
 directory: out
@@ -15,4 +15,4 @@ build_script: ../common-scripts/rust.sh flint
 sources:
   - kind: git
     url: https://github.com/TimelessOS/Flint
-    commit: ad67db9c9a4edc8cc99d64162b32a49b79095283
+    commit: f121b057af102818807c941cd2e5a49f37a10ee3
