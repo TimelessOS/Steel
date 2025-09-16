@@ -1,0 +1,17 @@
+id: zlib
+edition: 2025
+
+metadata:
+  title: zlib-ng
+  description: zlib data compression library for the next generation systems
+  license: Zlib
+  version: 2.2.5
+  homepage_url: https://github.com/zlib-ng/zlib-ng
+
+directory: out
+build_script: ../common-scripts/autotools.sh --zlib-compat
+
+sources:
+  - kind: git
+    url: https://github.com/zlib-ng/zlib-ng
+    commit: 425439062b114a0f6cf625022c41d929c7e879f9
