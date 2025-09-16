@@ -1,0 +1,17 @@
+id: openssl
+edition: 2025
+
+metadata:
+  title: OpenSSL
+  description: TLS/SSL and crypto library
+  license: Apache-2.0
+  version: 3.5.2
+  homepage_url: https://www.openssl.org/
+
+directory: out
+build_script: openssl.sh
+
+sources:
+  - kind: git
+    url: https://github.com/openssl/openssl
+    commit: 0893a62353583343eb712adef6debdfbe597c227
