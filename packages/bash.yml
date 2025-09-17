@@ -1,0 +1,17 @@
+id: bash
+edition: 2025
+commands: [bin/bash]
+
+metadata:
+  title: Bash
+  description: GNU Bourne Again SHell
+  license: GPL-3.0-or-later
+  version: 5.3
+  homepage_url: https://www.gnu.org/software/bash/
+
+directory: out
+build_script: ../common-scripts/autotools.sh --without-bash-malloc --with-curses
+
+sources:
+  - kind: tar
+    url: https://mirror.ossplanet.net/gnu/bash/bash-5.3.tar.gz
