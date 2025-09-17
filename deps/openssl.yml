@@ -5,13 +5,12 @@ metadata:
   title: OpenSSL
   description: TLS/SSL and crypto library
   license: Apache-2.0
-  version: 3.5.2
+  version: 3.5.3
   homepage_url: https://www.openssl.org/
 
 directory: out
 build_script: openssl.sh
 
 sources:
-  - kind: git
-    url: https://github.com/openssl/openssl
-    commit: 0893a62353583343eb712adef6debdfbe597c227
+  - kind: tar
+    url: https://github.com/openssl/openssl/releases/download/openssl-3.5.3/openssl-3.5.3.tar.gz

@@ -12,6 +12,5 @@ directory: out
 build_script: ../common-scripts/autotools.sh --zlib-compat
 
 sources:
-  - kind: git
-    url: https://github.com/zlib-ng/zlib-ng
-    commit: 425439062b114a0f6cf625022c41d929c7e879f9
+  - kind: tar
+    url: https://github.com/zlib-ng/zlib-ng/archive/refs/tags/2.2.5.tar.gz
