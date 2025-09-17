@@ -15,4 +15,4 @@ build_script: ../common-scripts/rust.sh flint
 sources:
   - kind: git
     url: https://github.com/TimelessOS/Flint
-    commit: 5c3fb38dd3e26748451d85d54e2b70a18a84e34a
+    commit: d086702e01c7765c63a59f055c2aea6819ca69e9
