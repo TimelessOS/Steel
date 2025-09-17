@@ -1,0 +1,18 @@
+id: libidn2
+edition: 2025
+
+metadata:
+  description: Libidn2 is a free software implementation of IDNA2008, Punycode and Unicode TR46.
+  license: GPL-3.0-or-later
+  version: 2.3.8
+  homepage_url: https://www.gnu.org/software/libidn/#libidn2
+
+directory: out
+build_script: ../common-scripts/autotools.sh
+
+include:
+- libunistring.yml
+
+sources:
+  - kind: tar
+    url: https://ftpmirror.gnu.org/gnu/libidn/libidn2-2.3.8.tar.gz

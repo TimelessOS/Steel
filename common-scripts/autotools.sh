@@ -2,23 +2,31 @@
 set -e
 
 export CC=musl-gcc
-export CFLAGS="-O2"
-export LDFLAGS="-static"
+export CFLAGS="-O2 -fPIC"
+export LDFLAGS="-L$PWD/lib"
+export CPPFLAGS="-I$PWD/include"
+export PKG_CONFIG_PATH=$PWD/lib/pkgconfig:$PKG_CONFIG_PATH
 
-export NOCONFIGURE=1;
+# Generate ./configure
+if [ ! -x configure ]; then
+    export NOCONFIGURE=1;
 
-if [ -x bootstrap ]; then bootstrap;
-elif [ -x bootstrap.sh ]; then bootstrap.sh;
-elif [ -x autogen ]; then autogen;
-elif [ -x autogen.sh ]; then autogen.sh;
-elif [ -x configure.ac ]; then autoreconf -ivf ./;
+    if [ -x bootstrap ]; then ./bootstrap;
+    elif [ -x bootstrap.sh ]; then ./bootstrap.sh;
+    elif [ -x autogen ]; then ./autogen;
+    elif [ -x autogen.sh ]; then ./autogen.sh;
+    elif [ -x configure.ac ]; then autoreconf -ivf ./;
+    fi
+
+    # Should only be needed by git, but is rather annoying.
+    make configure | true
 fi
 
-# Should only be needed by git, but is rather annoying.
-make configure | true
+export OUTDIR="$(pwd)/out"
 
-./configure --prefix=/ "$@"
+./configure --prefix=/ --libdir=/lib --disable-shared --enable-static "$@"
 
-make
+make STATIC=true STRIP=true
+make DESTDIR=$OUTDIR -j1 install
 
-make DESTDIR=out -j1 install
+find $OUTDIR/lib -name '*.la' -delete

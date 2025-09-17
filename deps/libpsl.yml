@@ -1,0 +1,18 @@
+id: libpsl
+edition: 2025
+
+metadata:
+  description: C library for the Public Suffix List 
+  license: MIT
+  version: 0.21.5
+  homepage_url: https://rockdaboot.github.io/libpsl/
+
+directory: out
+build_script: ../common-scripts/autotools.sh LIBS="-lunistring"
+
+include:
+- libidn2.yml
+
+sources:
+  - kind: tar
+    url: https://github.com/rockdaboot/libpsl/releases/download/0.21.5/libpsl-0.21.5.tar.gz
