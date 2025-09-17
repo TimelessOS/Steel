@@ -1,8 +1,6 @@
 #!/bin/bash
 set -e
 
-cd ncurses-6.5-20250809
-
 CC=musl-gcc ./configure \
     --prefix=/ \
     --with-shared \
@@ -15,5 +13,3 @@ CC=musl-gcc ./configure \
 make -j$(nproc)
 
 make install DESTDIR=$PWD/out
-
-mv out ..
