@@ -11,7 +11,7 @@ metadata:
 
 directory: out
 build_script: |
-    ../common-scripts/autotools.sh
+    ../common-scripts/autotools.sh \
     --enable-unicode \
     --enable-static \
     --enable-affinity
