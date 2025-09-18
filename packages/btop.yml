@@ -10,7 +10,7 @@ metadata:
   homepage_url: https://github.com/aristocratos/btop
 
 directory: out
-build_script: btop.sh
+build_script: ../common-scripts/make.sh
 
 include: 
 - ../deps/ncurses.yml
