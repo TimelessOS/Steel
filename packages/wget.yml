@@ -1,0 +1,21 @@
+id: wget
+edition: 2025
+commands: [bin/wget]
+
+metadata:
+  title: GNU Wget
+  description: The non-interactive network downloader
+  license: GPL-3.0-or-later
+  version: 1.25.0
+  homepage_url: https://www.gnu.org/software/wget/
+
+directory: out
+build_script: ../common-scripts/autotools.sh --with-ssl=openssl
+
+include:
+- ../deps/openssl.yml
+- ../deps/zlib.yml
+
+sources:
+  - kind: tar
+    url: https://ftpmirror.gnu.org/gnu/wget/wget-1.25.0.tar.gz
