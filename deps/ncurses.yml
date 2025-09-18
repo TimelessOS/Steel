@@ -15,3 +15,5 @@ sources:
 
 env:
   TERMINFO: "./share/terminfo"
+
+# Perhaps we need to build nonwide versions too... or symlink the wide version?

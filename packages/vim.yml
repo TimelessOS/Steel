@@ -1,0 +1,23 @@
+id: vim
+edition: 2025
+commands: [bin/vim]
+
+metadata:
+  title: Vim
+  description: Vi IMproved, a programmer's text editor
+  license: Vim
+  version: 9.1.1768
+  homepage_url: https://www.vim.org/
+
+directory: out
+build_script: ../common-scripts/autotools.sh --with-features=huge --enable-multibyte --with-tlib=ncursesw
+
+include:
+- ../deps/ncurses.yml
+
+sdks:
+- ../deps/ncurses.yml
+
+sources:
+  - kind: tar
+    url: https://github.com/vim/vim/archive/refs/tags/v9.1.1768.tar.gz
