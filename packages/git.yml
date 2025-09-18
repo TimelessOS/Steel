@@ -1,0 +1,21 @@
+id: git
+edition: 2025
+commands: [bin/git]
+
+metadata:
+  title: Git
+  description: Distributed version control system
+  license: GPL-2.0
+  version: 2.47.0
+  homepage_url: https://git-scm.com/
+
+directory: out
+build_script: ../common-scripts/autotools.sh
+
+include:
+- ../deps/zlib.yml
+- ../deps/openssl.yml
+
+sources:
+  - kind: tar
+    url: https://www.kernel.org/pub/software/scm/git/git-2.51.0.tar.gz
