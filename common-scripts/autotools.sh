@@ -10,7 +10,7 @@ export PKG_CONFIG_LIBDIR=$PWD/lib/pkgconfig
 export PKG_CONFIG_SYSROOT_DIR=$PWD/
 
 # Generate ./configure
-if [ ! -x configure ]; then
+if [ ! -f configure ]; then
     export NOCONFIGURE=1;
 
     if [ -x bootstrap ]; then ./bootstrap;
@@ -21,14 +21,18 @@ if [ ! -x configure ]; then
     fi
 
     # Should only be needed by git, but is rather annoying.
-    make configure | true
+    make configure | true > /dev/null
 fi
 
 export OUTDIR="$(pwd)/out"
 
-./configure --verbose --prefix=/ --libdir=/lib --enable-static --with-pic --disable-runtime LIBS="-lssl -lcrypto" "$@"
+ls
 
-make STATIC=true STRIP=true TARGET=x86_64-linux-musl
-make DESTDIR=$OUTDIR -j1 TARGET=x86_64-linux-musl install
+./configure --verbose --prefix=/ --libdir=/lib --enable-static --with-pic "$@"
 
+make STATIC=true
+make DESTDIR=$OUTDIR -j1 install
+
+# Clean up useless libtool garbage
+mkdir -p $OUTDIR/lib
 find $OUTDIR/lib -name '*.la' -delete
