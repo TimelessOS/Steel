@@ -5,9 +5,18 @@ export CC="musl-gcc -static"
 export CFLAGS="-O2 -fPIC"
 export LDFLAGS="-L$PWD/lib"
 export CPPFLAGS="-I$PWD/include"
-export PKG_CONFIG_PATH=$PWD/lib/pkgconfig:$PKG_CONFIG_PATH
+
+export PKG_CONFIG_PATH=$PWD/lib/pkgconfig
 export PKG_CONFIG_LIBDIR=$PWD/lib/pkgconfig
 export PKG_CONFIG_SYSROOT_DIR=$PWD/
+export PATH=$PWD/bin:$PATH
+
+# MUSL vs Glibc...? or just strangely defined?
+# Required by deps/gpgme
+export CFLAGS="-Doff64_t=off_t $CFLAGS"
+export CFLAGS="-Dino64_t=ino_t $CFLAGS"
+
+unset LD_LIBRARY_PATH
 
 # Generate ./configure
 if [ ! -f configure ]; then
@@ -25,8 +34,6 @@ if [ ! -f configure ]; then
 fi
 
 export OUTDIR="$(pwd)/out"
-
-ls
 
 ./configure --verbose --prefix=/ --libdir=/lib --enable-static --with-pic "$@"
 

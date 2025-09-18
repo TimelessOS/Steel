@@ -1,0 +1,21 @@
+id: gpgme
+edition: 2025
+
+metadata:
+  version: 2.0.0
+  homepage_url: https://gnupg.org
+
+directory: out
+build_script: ../common-scripts/autotools.sh
+
+include:
+- gpg-error.yml
+- libgcrypt.yml
+- libassuan.yml
+- libksba.yml
+- npth.yml
+- gpg.yml
+
+sources:
+  - kind: tar
+    url: https://gnupg.org/ftp/gcrypt/gpgme/gpgme-2.0.0.tar.bz2
