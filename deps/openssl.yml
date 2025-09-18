@@ -11,6 +11,9 @@ metadata:
 directory: out
 build_script: openssl.sh
 
+sdks:
+- linux-headers.yml
+
 sources:
   - kind: tar
     url: https://github.com/openssl/openssl/releases/download/openssl-3.5.3/openssl-3.5.3.tar.gz

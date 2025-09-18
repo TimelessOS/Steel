@@ -1,0 +1,24 @@
+id: curl
+edition: 2025
+commands: [bin/curl]
+
+metadata:
+  title: cURL
+  description: Command line tool and library for transferring data with URLs
+  license: curl
+  version: 8.16.0
+  homepage_url: https://curl.se/
+
+directory: out
+build_script: ../common-scripts/autotools.sh --with-openssl --without-runtime-check
+
+include:
+- ../deps/openssl.yml
+
+sdks:
+- ../deps/zlib.yml
+- ../deps/libpsl.yml
+
+sources:
+  - kind: tar
+    url: https://curl.se/download/curl-8.16.0.tar.gz
