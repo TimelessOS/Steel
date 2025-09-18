@@ -10,7 +10,11 @@ metadata:
   homepage_url: https://htop.dev/
 
 directory: out
-build_script: htop.sh
+build_script: |
+    ../common-scripts/autotools.sh
+    --enable-unicode \
+    --enable-static \
+    --enable-affinity
 
 include: 
 - ../deps/ncurses.yml
