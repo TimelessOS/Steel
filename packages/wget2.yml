@@ -1,0 +1,22 @@
+id: wget2
+edition: 2025
+commands: [bin/wget2]
+
+metadata:
+  title: GNU Wget2
+  description: The non-interactive network downloader
+  license: GPL-3.0
+  version: 2.2.0
+  homepage_url: https://www.gnu.org/software/wget/
+
+directory: out
+build_script: ../common-scripts/autotools.sh --with-ssl=openssl LIBS="-lgpg-error -lassuan"
+
+include:
+- ../deps/openssl.yml
+- ../deps/zlib.yml
+- ../deps/gpgme.yml
+
+sources:
+  - kind: tar
+    url: https://mirror.twds.com.tw/gnu/wget/wget2-2.2.0.tar.gz
