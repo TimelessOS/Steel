@@ -13,7 +13,7 @@ export PKG_CONFIG_SYSROOT_DIR=$PWD/
 export OUTDIR="$(pwd)/out"
 
 make STATIC=true CC="$CC" CFLAGS="$CFLAGS" LDFLAGS="$LDFLAGS" CPPFLAGS="$CPPFLAGS"
-make DESTDIR="$OUTDIR" install -j1
+PREFIX=/ make DESTDIR="$OUTDIR" install -j1
 
 # Clean up useless libtool garbage
 mkdir -p "$OUTDIR/lib"
